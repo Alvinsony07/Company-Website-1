@@ -23,7 +23,7 @@ export class ContactPageComponent implements OnInit {
       icon: 'fas fa-envelope',
       title: 'Email Us',
       description: 'Send us an email and we\'ll respond within 24 hours.',
-      info: 'hello@neuraleaf.com'
+      info: 'alvinsony07@gmail.com'
     },
     {
       icon: 'fas fa-phone',
