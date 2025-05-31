@@ -76,10 +76,51 @@
       <!-- Connect -->
       <div class="col-12 col-md-3">
         <h5 class="mb-3">Connect</h5>
-        <div class="mb-3">
-          <a href="#" class="mx-2 text-white"><i class="fab fa-facebook fa-lg"></i></a>
-          <a href="#" class="mx-2 text-white"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="mx-2 text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+        <div class="mb-3 social-links justify-content-center">
+          <!-- Facebook -->
+          <button 
+            class="social-link" 
+            (click)="openSocialLink(socialLinks.facebook)"
+            title="Follow us on Facebook"
+            type="button">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          
+          <!-- X (Twitter) -->
+          <button 
+            class="social-link" 
+            (click)="openSocialLink(socialLinks.twitter)"
+            title="Follow us on X"
+            type="button">
+            <i class="fab fa-x-twitter"></i>
+          </button>
+          
+          <!-- LinkedIn -->
+          <button 
+            class="social-link" 
+            (click)="openSocialLink(socialLinks.linkedin)"
+            title="Connect with us on LinkedIn"
+            type="button">
+            <i class="fab fa-linkedin-in"></i>
+          </button>
+          
+          <!-- Instagram -->
+          <button 
+            class="social-link" 
+            (click)="openSocialLink(socialLinks.instagram)"
+            title="Follow us on Instagram"
+            type="button">
+            <i class="fab fa-instagram"></i>
+          </button>
+          
+          <!-- GitHub -->
+          <button 
+            class="social-link" 
+            (click)="openSocialLink(socialLinks.github)"
+            title="Check out our GitHub"
+            type="button">
+            <i class="fab fa-github"></i>
+          </button>
         </div>
         <a routerLink="/contact" class="btn btn-outline-light rounded-pill px-4">Get In Touch</a>
       </div>
@@ -89,4 +130,3 @@
     </div>
   </div>
 </footer>
-

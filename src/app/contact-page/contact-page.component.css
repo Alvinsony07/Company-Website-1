@@ -453,3 +453,198 @@ textarea.form-control {
     height: 50vh;
   }
 }
+
+/* Social Media Section After Hero - Add this to your contact-page.component.css */
+
+.social-media-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-media-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.3), transparent);
+}
+
+.social-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.social-content h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.social-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(45deg, #007bff, #28a745);
+  border-radius: 2px;
+}
+
+.social-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-link-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 150px;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-link-hero i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+/* Individual Social Media Styling */
+.social-link-hero.facebook {
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+}
+
+.social-link-hero.linkedin {
+  background: linear-gradient(135deg, #0077b5, #00a0dc);
+}
+
+.social-link-hero.twitter {
+  background: linear-gradient(135deg, #000000, #333333);
+}
+
+.social-link-hero.instagram {
+  background: linear-gradient(135deg, #e4405f, #fd5949, #fccc63);
+}
+
+.social-link-hero.github {
+  background: linear-gradient(135deg, #333333, #24292e);
+}
+
+/* Hover Effects */
+.social-link-hero:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.social-link-hero:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Shimmer Effect */
+.social-link-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.social-link-hero:hover::before {
+  left: 100%;
+}
+
+/* Pulse Animation */
+@keyframes socialPulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.social-link-hero {
+  animation: socialPulse 3s infinite;
+}
+
+.social-link-hero:nth-child(1) { animation-delay: 0s; }
+.social-link-hero:nth-child(2) { animation-delay: 0.6s; }
+.social-link-hero:nth-child(3) { animation-delay: 1.2s; }
+.social-link-hero:nth-child(4) { animation-delay: 1.8s; }
+.social-link-hero:nth-child(5) { animation-delay: 2.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .social-media-section {
+    padding: 60px 0;
+  }
+  
+  .social-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .social-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .social-links-container {
+    gap: 15px;
+  }
+  
+  .social-link-hero {
+    padding: 12px 20px;
+    min-width: 130px;
+    font-size: 0.9rem;
+  }
+  
+  .social-link-hero i {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-links-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .social-link-hero {
+    width: 200px;
+  }
+}

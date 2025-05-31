@@ -16,6 +16,15 @@ export class AppComponent implements OnInit {
   title = 'NeuraLeaf Solutions';
   isScrolled = false;
 
+  // Social media links
+  socialLinks = {
+    facebook: 'https://www.facebook.com/alvin.sony.397',
+    linkedin: 'https://www.linkedin.com/in/alvin-sony/',
+    twitter: 'https://x.com/alvin_sony3',
+    instagram: 'https://www.instagram.com/alvin_sony_/',
+    github: 'https://github.com/Alvinsony07'
+  };
+
   constructor(private router: Router) {}
 
   @HostListener('window:scroll', [])
@@ -30,5 +39,10 @@ export class AppComponent implements OnInit {
       .subscribe(() => {
         window.scrollTo(0, 0);
       });
+  }
+
+  // Method to open social media links in new tab
+  openSocialLink(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 }
