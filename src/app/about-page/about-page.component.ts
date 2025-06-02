@@ -15,6 +15,7 @@ export class AboutPageComponent implements OnInit {
 
   teamMembers = [
   {
+    id: 1,
     name: 'Alvin Sony',
     role: 'Founder & CEO',
     image: 'https://pbs.twimg.com/media/GsKc5D7aUAAhY-F?format=jpg&name=small',
@@ -24,18 +25,21 @@ export class AboutPageComponent implements OnInit {
   },
   
 {
+      id: 2,
       name: 'Alicia Samuel',
       role: 'Chief Technology Officer',
       bio: 'Expert in AI and cloud architecture solutions',
       image: 'https://cdn.leonardo.ai/users/0b7400cc-a25a-491e-afc6-649c4d11e717/generations/3fc0e9a4-547b-4554-aa68-a496c53b9fd9/segments/4:4:1/Flux_Dev_generate_an_image_of_a_polished_young_professional_wo_3.jpg'
     },
     {
+      id: 3,
       name: 'David John',
       role: 'Head of Product',
       bio: 'Product strategist focused on user experience',
       image: 'https://cdn.leonardo.ai/users/0b7400cc-a25a-491e-afc6-649c4d11e717/generations/7d85432f-3292-429a-a35c-6a26e431fe7f/segments/3:4:1/Flux_Dev_generate_an_image_of_a_younglooking_professional_with_2.jpg'
     },
     {
+      id: 4,
       name: 'Martin Cooper',
       role: 'Lead Developer',
       bio: 'Full-stack developer and technical architect',

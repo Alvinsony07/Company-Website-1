@@ -19,23 +19,27 @@
     <div class="container">
       <h2 class="section-title">Our Product Suite</h2>
       <div class="products-grid">
-        <div class="product-card" *ngFor="let product of products">
-          <div class="card-image">
-            <img [src]="product.image" [alt]="product.title">
-            <div class="card-overlay">
-              <button class="overlay-button">Learn More</button>
+        @for (product of products; track product.title) {
+          <div class="product-card">
+            <div class="card-image">
+              <img [src]="product.image" [alt]="product.title">
+              <div class="card-overlay">
+                <button class="overlay-button">Learn More</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>{{ product.title }}</h3>
+              <p>{{ product.description }}</p>
+              <div class="features-list">
+                @for (feature of product.features; track feature) {
+                  <span class="feature-tag">
+                    {{ feature }}
+                  </span>
+                }
+              </div>
             </div>
           </div>
-          <div class="card-content">
-            <h3>{{ product.title }}</h3>
-            <p>{{ product.description }}</p>
-            <div class="features-list">
-              <span class="feature-tag" *ngFor="let feature of product.features">
-                {{ feature }}
-              </span>
-            </div>
-          </div>
-        </div>
+        }
       </div>
     </div>
   </section>
@@ -44,10 +48,12 @@
   <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item" *ngFor="let stat of stats">
-          <div class="stat-number">{{ stat.number }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
-        </div>
+        @for (stat of stats; track stat.label) {
+          <div class="stat-item">
+            <div class="stat-number">{{ stat.number }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </div>
+        }
       </div>
     </div>
   </section>

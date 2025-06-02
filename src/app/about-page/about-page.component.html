@@ -13,6 +13,7 @@
   <!-- About Content -->
   <section class="about-content">
     <div class="container">
+      <!-- Who We Are -->
       <div class="row align-items-center mb-5">
         <div class="col-md-6">
           <h2>Who We Are</h2>
@@ -20,12 +21,12 @@
           <p>Founded by industry veterans, our mission is to simplify complexity through elegant and scalable technology.</p>
         </div>
         <div class="col-md-6">
-         <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-     class="img-fluid rounded shadow" alt="Team planning strategy">
-
+          <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+               class="img-fluid rounded shadow" alt="Team planning strategy">
         </div>
       </div>
-      
+
+      <!-- Our Vision -->
       <div class="row align-items-center">
         <div class="col-md-6">
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
@@ -61,27 +62,26 @@
         <p class="team-subtitle">The brilliant minds behind NeuraLeaf's success</p>
       </div>
       <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-6 mb-4" *ngFor="let member of teamMembers">
-          <div class="team-member">
-            <div class="member-image">
-              <img [src]="member.image" [alt]="member.name" class="img-fluid">
-              <div class="member-overlay">
-                <div class="social-links">
+        @for (member of teamMembers; track member.id) {
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="team-member">
+              <div class="member-image">
+                <img [src]="member.image" [alt]="member.name" class="img-fluid">
+                <div class="member-overlay">
                   <div class="social-links">
                     <a [href]="member.linkedin" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a [href]="member.twitter" class="social-link" target="_blank"><i class="fab fa-x-twitter"></i></a>
                   </div>
-
                 </div>
               </div>
-            </div>
-            <div class="member-info">
-              <h5>{{ member.name }}</h5>
-              <p class="member-role">{{ member.role }}</p>
-              <p class="member-bio">{{ member.bio }}</p>
+              <div class="member-info">
+                <h5>{{ member.name }}</h5>
+                <p class="member-role">{{ member.role }}</p>
+                <p class="member-bio">{{ member.bio }}</p>
+              </div>
             </div>
           </div>
-        </div>
+        }
       </div>
     </div>
   </section>
@@ -94,15 +94,17 @@
         <p>The principles that guide everything we do</p>
       </div>
       <div class="row">
-        <div class="col-md-4 mb-4" *ngFor="let value of companyValues">
-          <div class="value-card">
-            <div class="value-icon">
-              <i [class]="value.icon"></i>
+        @for (value of companyValues; track $index) {
+          <div class="col-md-4 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i [class]="value.icon"></i>
+              </div>
+              <h4>{{ value.title }}</h4>
+              <p>{{ value.description }}</p>
             </div>
-            <h4>{{ value.title }}</h4>
-            <p>{{ value.description }}</p>
           </div>
-        </div>
+        }
       </div>
     </div>
   </section>
