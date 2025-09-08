@@ -5,37 +5,38 @@
     <div class="hero-background"></div>
     <div class="Center-Aligned">
       <div class="hero-content">
-        <h1 class="hero-title">Powering Digital Products<br>for Tomorrow</h1>
-        <p class="hero-subtitle">Innovative • Scalable • Smart</p>
-        <button class="cta-button" (click)="scrollToSection('products')">
-          Explore Our Products
+        <h1 class="hero-title">Fresh & Delicious Meals<br>at Your College Canteen</h1>
+        <p class="hero-subtitle">Affordable • Nutritious • Convenient</p>
+        <button class="cta-button" (click)="scrollToSection('menu-highlights')">
+          Explore Today's Menu
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products" class="products-section">
+  <!-- Menu Highlights Section -->
+  <section id="menu-highlights" class="products-section">
     <div class="container">
-      <h2 class="section-title">Our Product Suite</h2>
+      <h2 class="section-title">Today's Highlights</h2>
       <div class="products-grid">
-        @for (product of products; track product.title) {
+        @for (item of todaysSpecials; track item.name) {
           <div class="product-card">
             <div class="card-image">
-              <img [src]="product.image" [alt]="product.title">
+              <img [src]="item.image" [alt]="item.name">
               <div class="card-overlay">
-                <button class="overlay-button">Learn More</button>
+                <button class="overlay-button" routerLink="/menu">Order Now</button>
               </div>
             </div>
             <div class="card-content">
-              <h3>{{ product.title }}</h3>
-              <p>{{ product.description }}</p>
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.description }}</p>
               <div class="features-list">
-                @for (feature of product.features; track feature) {
-                  <span class="feature-tag">
-                    {{ feature }}
-                  </span>
-                }
+                <span class="feature-tag price-tag">
+                  ₹{{ item.price }}
+                </span>
+                <span class="feature-tag" [class.veg]="item.isVeg" [class.non-veg]="!item.isVeg">
+                  {{ item.isVeg ? 'Veg' : 'Non-Veg' }}
+                </span>
               </div>
             </div>
           </div>
@@ -58,35 +59,44 @@
     </div>
   </section>
 
-  <!-- Solutions Section -->
-  <section id="solutions" class="solutions-section">
+  <!-- Services Section -->
+  <section id="services" class="solutions-section">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <h2 class="section-title text-start">Enterprise Solutions</h2>
+          <h2 class="section-title text-start">Our Services</h2>
           <div class="solution-item">
             <div class="solution-icon">
-              <i class="fas fa-robot"></i>
+              <i class="fas fa-utensils"></i>
             </div>
             <div class="solution-content">
-              <h4>AI Integration</h4>
-              <p>We implement AI into enterprise workflows for automation and efficiency gains.</p>
+              <h4>Fresh Daily Meals</h4>
+              <p>We prepare fresh breakfast, lunch, and dinner daily with high-quality ingredients.</p>
             </div>
           </div>
           <div class="solution-item">
             <div class="solution-icon">
-              <i class="fas fa-cloud"></i>
+              <i class="fas fa-clock"></i>
             </div>
             <div class="solution-content">
-              <h4>Cloud Migration</h4>
-              <p>Seamlessly move infrastructure to the cloud with zero downtime guaranteed.</p>
+              <h4>Quick Service</h4>
+              <p>Fast and efficient service to ensure you don't miss your classes or study time.</p>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon">
+              <i class="fas fa-rupee-sign"></i>
+            </div>
+            <div class="solution-content">
+              <h4>Student-Friendly Pricing</h4>
+              <p>Affordable prices designed with student budgets in mind, without compromising quality.</p>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="solutions-image">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Enterprise Solutions" class="img-fluid">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="College Canteen" class="img-fluid">
           </div>
         </div>
       </div>

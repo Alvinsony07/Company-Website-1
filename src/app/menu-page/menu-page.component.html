@@ -1,0 +1,98 @@
+<!-- menu-page.component.html -->
+<div class="menu-container">
+  <!-- Hero Section -->
+  <section class="menu-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Our Menu</h1>
+        <p>Delicious, fresh, and affordable meals for students</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="category-filter">
+    <div class="container">
+      <div class="filter-buttons">
+        @for (category of categories; track category) {
+          <button 
+            class="filter-btn" 
+            [class.active]="selectedCategory === category"
+            (click)="selectCategory(category)">
+            {{ category }}
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Items -->
+  <section class="menu-items">
+    <div class="container">
+      <div class="menu-grid">
+        @for (item of filteredItems; track item.id) {
+          <div class="menu-card" [class.unavailable]="!item.available">
+            <div class="menu-image">
+              <img [src]="item.image" [alt]="item.name">
+              <div class="veg-indicator" [class.non-veg]="!item.isVeg">
+                @if (item.isVeg) {
+                  <i class="fas fa-circle text-success"></i>
+                } @else {
+                  <i class="fas fa-circle text-danger"></i>
+                }
+              </div>
+              @if (!item.available) {
+                <div class="unavailable-overlay">
+                  <span>Out of Stock</span>
+                </div>
+              }
+            </div>
+            <div class="menu-content">
+              <div class="menu-header">
+                <h4>{{ item.name }}</h4>
+                <span class="price">₹{{ item.price }}</span>
+              </div>
+              <p class="description">{{ item.description }}</p>
+              <div class="menu-actions">
+                <button 
+                  class="order-btn" 
+                  [disabled]="!item.available"
+                  (click)="addToOrder(item)">
+                  @if (item.available) {
+                    Order Now
+                  } @else {
+                    Unavailable
+                  }
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Summary (if items are selected) -->
+  <section class="order-summary" *ngIf="orderItems.length > 0">
+    <div class="container">
+      <div class="summary-card">
+        <h3>Your Order</h3>
+        <div class="order-list">
+          @for (orderItem of orderItems; track orderItem.id) {
+            <div class="order-item">
+              <span class="item-name">{{ orderItem.name }}</span>
+              <span class="item-quantity">x{{ orderItem.quantity }}</span>
+              <span class="item-price">₹{{ orderItem.price * orderItem.quantity }}</span>
+            </div>
+          }
+        </div>
+        <div class="order-total">
+          <strong>Total: ₹{{ getOrderTotal() }}</strong>
+        </div>
+        <button class="place-order-btn" (click)="placeOrder()">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

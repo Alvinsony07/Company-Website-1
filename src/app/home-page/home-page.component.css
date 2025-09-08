@@ -473,3 +473,21 @@
     margin-bottom: 1rem;
   }
 }
+
+/* Canteen-specific styles */
+.price-tag {
+  background: #ff6b35 !important;
+  color: white !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.feature-tag.veg {
+  background: #28a745 !important;
+  color: white !important;
+}
+
+.feature-tag.non-veg {
+  background: #dc3545 !important;
+  color: white !important;
+}

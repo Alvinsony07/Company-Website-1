@@ -1,0 +1,273 @@
+/* menu-page.component.css */
+.menu-container {
+  padding-top: 80px;
+}
+
+.menu-hero {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.menu-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.menu-hero p {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.category-filter {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: white;
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #ff6b35;
+  color: white;
+}
+
+.menu-items {
+  padding: 60px 0;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.menu-card.unavailable {
+  opacity: 0.6;
+}
+
+.menu-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-image img {
+  transform: scale(1.05);
+}
+
+.veg-indicator {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: white;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.unavailable-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.menu-content {
+  padding: 25px;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.menu-header h4 {
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+  flex: 1;
+}
+
+.price {
+  color: #ff6b35;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-left: 15px;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.order-btn {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.order-btn:hover:not(:disabled) {
+  background: #e55a2b;
+}
+
+.order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.order-summary {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.summary-card h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.item-quantity {
+  margin: 0 10px;
+  color: #666;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #ff6b35;
+}
+
+.order-total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #ff6b35;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.place-order-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.place-order-btn:hover {
+  background: #218838;
+}
+
+@media (max-width: 768px) {
+  .menu-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .filter-buttons {
+    padding: 0 20px;
+  }
+  
+  .order-summary {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 40px;
+  }
+  
+  .summary-card {
+    margin: 0 20px;
+  }
+}

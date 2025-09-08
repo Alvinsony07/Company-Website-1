@@ -6,37 +6,40 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent implements OnInit {
   
   stats = [
-    { number: 0, target: 500, label: 'Happy Clients' },
-    { number: 0, target: 1000, label: 'Projects Completed' },
-    { number: 0, target: 50, label: 'Team Members' },
-    { number: 0, target: 99, label: 'Uptime %' }
+    { number: 0, target: 500, label: 'Happy Students' },
+    { number: 0, target: 150, label: 'Daily Meals Served' },
+    { number: 0, target: 25, label: 'Menu Items' },
+    { number: 0, target: 98, label: 'Satisfaction %' }
   ];
 
-  products = [
+  todaysSpecials = [
     {
-      title: 'NeuraLeaf AI',
-      description: 'Smart AI-powered tools for automation, analytics, and decision-making.',
-      image: 'https://cdn.prod.website-files.com/62fcfcf2e1a4c21ed18b80e6/65f30e865fe174cd66448f86_ai_platform_illustration_aga2.webp',
-      features: ['Machine Learning', 'Predictive Analytics', 'Automation']
+      name: 'Chicken Biriyani',
+      description: 'Aromatic basmati rice with tender spiced chicken, served with raita and pickle.',
+      image: 'https://images.unsplash.com/photo-1563379091339-03246963d7d3?w=400&h=300&fit=crop',
+      price: 120,
+      isVeg: false
     },
     {
-      title: 'DevXOps',
-      description: 'CI/CD, monitoring, and deployment tools tailored for modern developers.',
-      image: 'https://www.orangemantra.com/blog/wp-content/uploads/2022/12/Infographics-1-5.png',
-      features: ['Continuous Integration', 'Monitoring', 'Deployment']
+      name: 'Special Veg Thali',
+      description: 'Complete meal with dal, vegetables, rice, roti, pickle, and sweet.',
+      image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop',
+      price: 80,
+      isVeg: true
     },
     {
-      title: 'NeuraLeaf Cloud',
-      description: 'Unified SaaS dashboard for managing your digital assets with ease.',
-      image: 'https://cdn.prod.website-files.com/643d2eea03135260bdaca209/6585cea39ae01230757b9f31_QuantumCloud.webp',
-      features: ['Cloud Management', 'Analytics', 'Security']
+      name: 'Masala Dosa',
+      description: 'Crispy golden crepe filled with spiced potato curry, served with sambar and chutney.',
+      image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop',
+      price: 45,
+      isVeg: true
     }
   ];
 
